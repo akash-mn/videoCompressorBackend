@@ -28,7 +28,7 @@ const io = new Server(server,{
     credentials: true,
   },
 });
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
 
 app.use(cors());
