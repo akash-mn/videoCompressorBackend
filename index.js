@@ -35,6 +35,10 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
+
+app.use(express.static(path.join(__dirname, "public/assets")));
+app.use(express.static(path.join(__dirname, "tmp")));
+
 // Set up Multer for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
