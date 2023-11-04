@@ -98,7 +98,8 @@ app.post("/api/compress", upload.single("video"), async (req, res) => {
         });
       })
       .on("error", (err) => {
-        res.status(500).json({ error: "Video compression failed" });
+        console.error("Video compression error:", err);
+        res.status(500).json({ error: `Video compression failed: ${err.message}` });
       });
 
     output.save(compressedFilePath);
